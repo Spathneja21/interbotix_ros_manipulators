@@ -1,0 +1,8 @@
+<mujoco model="wx200_bench_velocity">
+  <!-- Dynamics testbench: the arm and velocity actuators, and nothing else.
+       Deliberately NO FLOOR. Actuator experiments let the arm sink under
+       gravity on purpose; a floor turns "the servo cannot hold" into "the
+       gripper landed", which silently corrupts the measurement. -->
+  <include file="wx200.xml"/>
+  <include file="actuators_velocity.xml"/>
+</mujoco>
