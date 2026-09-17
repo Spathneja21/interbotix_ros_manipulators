@@ -44,6 +44,7 @@ import tf2_ros
 
 from arm_velocity_hw import HardwareArm
 from cartesian_reach import CartesianReach, Z_OFFSET
+from ros_check import require_master
 
 BASE_FRAME = "locobot/arm_base_link"
 EE_FRAME = "locobot/ee_gripper_link"
@@ -80,6 +81,7 @@ def main():
     args = parse_args(sys.argv)
     target = np.array([args.x, args.y, args.z])
 
+    require_master()
     rospy.init_node("uan_reach_and_log_hw", anonymous=True)
 
     arm = HardwareArm(rate_hz=args.rate, max_speed=args.qd_max,

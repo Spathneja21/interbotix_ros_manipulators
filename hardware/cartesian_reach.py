@@ -57,15 +57,21 @@ Z_OFFSET = -0.005825
 
 class CartesianReach:
     def __init__(self, gain=1.5, v_max=0.06, qd_max=0.4, damping=0.08,
-                 tol=0.005, limit_margin=0.20, lower=None, upper=None):
+                 tol=0.005, limit_margin=0.20, lower=None, upper=None,
+                 model_path=None, base_site=None):
         """
         gain     : proportional gain, EE velocity per metre of error (1/s)
         v_max    : cap on commanded EE speed (m/s) -- keep this small on hardware
         qd_max   : cap on any single joint velocity (rad/s)
         damping  : lambda in the damped least squares solve
         tol      : distance at which the target counts as reached (m)
+
+        model_path, base_site: defaults are the standalone wx200 model with the
+        Z_OFFSET correction -- what reach_and_log_hw.py runs. Pass the full
+        LoCoBot model and base_site="arm_base" to express everything in the
+        model's own arm_base_link frame instead, with no correction needed.
         """
-        self.model = mujoco.MjModel.from_xml_path(MODEL)
+        self.model = mujoco.MjModel.from_xml_path(model_path or MODEL)
         self.data = mujoco.MjData(self.model)
         self.jid = [mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_JOINT, j)
                     for j in ARM_JOINTS]
@@ -73,6 +79,8 @@ class CartesianReach:
         self.vadr = np.array([self.model.jnt_dofadr[i] for i in self.jid])
         self.site = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_SITE,
                                       "ee_gripper")
+        self.base = (mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_SITE,
+                                       base_site) if base_site else None)
 
         self.gain, self.v_max, self.qd_max = gain, v_max, qd_max
         self.damping, self.tol = damping, tol
@@ -93,6 +101,9 @@ class CartesianReach:
     def fk(self, q):
         """EE position for joint angles q, in the ROBOT's arm_base_link frame."""
         self._sync(q)
+        if self.base is not None:
+            R = self.data.site_xmat[self.base].reshape(3, 3)
+            return R.T @ (self.data.site_xpos[self.site] - self.data.site_xpos[self.base])
         p = self.data.site_xpos[self.site].copy()
         p[2] += Z_OFFSET
         return p
@@ -102,7 +113,10 @@ class CartesianReach:
         self._sync(q)
         jacp = np.zeros((3, self.model.nv))
         mujoco.mj_jacSite(self.model, self.data, jacp, None, self.site)
-        return jacp[:, self.vadr]
+        J = jacp[:, self.vadr]
+        if self.base is not None:
+            J = self.data.site_xmat[self.base].reshape(3, 3).T @ J
+        return J
 
     def manipulability(self, q):
         """Smallest singular value of J -- how close we are to a singularity."""

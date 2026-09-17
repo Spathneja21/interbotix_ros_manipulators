@@ -1,0 +1,792 @@
+<mujoco model="locobot_wx200">
+  <compiler angle="radian" meshdir="meshes/" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" />
+  <asset>
+    <mesh name="bump_caster" file="bump_caster.stl" />
+    <mesh name="locobot_base_plate" file="locobot_base_plate.stl" />
+    <mesh name="locobot_arm_stand" file="locobot_arm_stand.stl" />
+    <mesh name="mobile_wx200_1_base" file="mobile_wx200_1_base.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_2_shoulder" file="mobile_wx200_2_shoulder.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_3_upper_arm" file="mobile_wx200_3_upper_arm.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_4_forearm" file="mobile_wx200_4_forearm.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist" file="mobile_wx200_5_wrist.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_6_gripper" file="mobile_wx200_6_gripper.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_7_gripper_prop" file="mobile_wx200_7_gripper_prop.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_10_ar_tag" file="mobile_wx200_10_ar_tag.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_8_gripper_bar" file="mobile_wx200_8_gripper_bar.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger" file="mobile_wx200_9_gripper_finger.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle" file="locobot_arm_cradle.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_battery" file="locobot_battery.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_camera_tower_small" file="locobot_camera_tower_small.stl" />
+    <mesh name="locobot_camera_tower_small_simple" file="locobot_camera_tower_small_simple.stl" />
+    <mesh name="locobot_pan" file="locobot_pan.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_tilt" file="locobot_tilt.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_camera" file="locobot_camera.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_base_plate_cvx0" file="cvx/locobot_base_plate_cvx0.stl" />
+    <mesh name="locobot_base_plate_cvx1" file="cvx/locobot_base_plate_cvx1.stl" />
+    <mesh name="locobot_base_plate_cvx2" file="cvx/locobot_base_plate_cvx2.stl" />
+    <mesh name="locobot_arm_stand_cvx0" file="cvx/locobot_arm_stand_cvx0.stl" />
+    <mesh name="locobot_arm_stand_cvx1" file="cvx/locobot_arm_stand_cvx1.stl" />
+    <mesh name="locobot_arm_stand_cvx2" file="cvx/locobot_arm_stand_cvx2.stl" />
+    <mesh name="locobot_arm_stand_cvx3" file="cvx/locobot_arm_stand_cvx3.stl" />
+    <mesh name="locobot_arm_stand_cvx4" file="cvx/locobot_arm_stand_cvx4.stl" />
+    <mesh name="locobot_arm_stand_cvx5" file="cvx/locobot_arm_stand_cvx5.stl" />
+    <mesh name="locobot_arm_stand_cvx6" file="cvx/locobot_arm_stand_cvx6.stl" />
+    <mesh name="locobot_arm_stand_cvx7" file="cvx/locobot_arm_stand_cvx7.stl" />
+    <mesh name="locobot_arm_stand_cvx8" file="cvx/locobot_arm_stand_cvx8.stl" />
+    <mesh name="locobot_arm_stand_cvx9" file="cvx/locobot_arm_stand_cvx9.stl" />
+    <mesh name="locobot_arm_stand_cvx10" file="cvx/locobot_arm_stand_cvx10.stl" />
+    <mesh name="locobot_arm_stand_cvx11" file="cvx/locobot_arm_stand_cvx11.stl" />
+    <mesh name="locobot_arm_stand_cvx12" file="cvx/locobot_arm_stand_cvx12.stl" />
+    <mesh name="locobot_arm_stand_cvx13" file="cvx/locobot_arm_stand_cvx13.stl" />
+    <mesh name="locobot_arm_stand_cvx14" file="cvx/locobot_arm_stand_cvx14.stl" />
+    <mesh name="locobot_arm_stand_cvx15" file="cvx/locobot_arm_stand_cvx15.stl" />
+    <mesh name="locobot_arm_stand_cvx16" file="cvx/locobot_arm_stand_cvx16.stl" />
+    <mesh name="locobot_arm_stand_cvx17" file="cvx/locobot_arm_stand_cvx17.stl" />
+    <mesh name="locobot_arm_stand_cvx18" file="cvx/locobot_arm_stand_cvx18.stl" />
+    <mesh name="locobot_arm_stand_cvx19" file="cvx/locobot_arm_stand_cvx19.stl" />
+    <mesh name="locobot_arm_stand_cvx20" file="cvx/locobot_arm_stand_cvx20.stl" />
+    <mesh name="locobot_arm_stand_cvx21" file="cvx/locobot_arm_stand_cvx21.stl" />
+    <mesh name="locobot_arm_stand_cvx22" file="cvx/locobot_arm_stand_cvx22.stl" />
+    <mesh name="locobot_arm_stand_cvx23" file="cvx/locobot_arm_stand_cvx23.stl" />
+    <mesh name="locobot_arm_stand_cvx24" file="cvx/locobot_arm_stand_cvx24.stl" />
+    <mesh name="mobile_wx200_1_base_cvx0" file="cvx/mobile_wx200_1_base_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx1" file="cvx/mobile_wx200_1_base_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx2" file="cvx/mobile_wx200_1_base_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx3" file="cvx/mobile_wx200_1_base_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx4" file="cvx/mobile_wx200_1_base_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx5" file="cvx/mobile_wx200_1_base_cvx5.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx6" file="cvx/mobile_wx200_1_base_cvx6.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx7" file="cvx/mobile_wx200_1_base_cvx7.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx8" file="cvx/mobile_wx200_1_base_cvx8.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx9" file="cvx/mobile_wx200_1_base_cvx9.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx10" file="cvx/mobile_wx200_1_base_cvx10.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx11" file="cvx/mobile_wx200_1_base_cvx11.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx12" file="cvx/mobile_wx200_1_base_cvx12.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx13" file="cvx/mobile_wx200_1_base_cvx13.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx14" file="cvx/mobile_wx200_1_base_cvx14.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx15" file="cvx/mobile_wx200_1_base_cvx15.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx16" file="cvx/mobile_wx200_1_base_cvx16.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx17" file="cvx/mobile_wx200_1_base_cvx17.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx18" file="cvx/mobile_wx200_1_base_cvx18.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx19" file="cvx/mobile_wx200_1_base_cvx19.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx20" file="cvx/mobile_wx200_1_base_cvx20.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx21" file="cvx/mobile_wx200_1_base_cvx21.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx22" file="cvx/mobile_wx200_1_base_cvx22.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx23" file="cvx/mobile_wx200_1_base_cvx23.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx24" file="cvx/mobile_wx200_1_base_cvx24.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx25" file="cvx/mobile_wx200_1_base_cvx25.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx26" file="cvx/mobile_wx200_1_base_cvx26.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx27" file="cvx/mobile_wx200_1_base_cvx27.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx28" file="cvx/mobile_wx200_1_base_cvx28.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx29" file="cvx/mobile_wx200_1_base_cvx29.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx30" file="cvx/mobile_wx200_1_base_cvx30.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_1_base_cvx31" file="cvx/mobile_wx200_1_base_cvx31.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_2_shoulder_cvx0" file="cvx/mobile_wx200_2_shoulder_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_2_shoulder_cvx1" file="cvx/mobile_wx200_2_shoulder_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_2_shoulder_cvx2" file="cvx/mobile_wx200_2_shoulder_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_2_shoulder_cvx3" file="cvx/mobile_wx200_2_shoulder_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_2_shoulder_cvx4" file="cvx/mobile_wx200_2_shoulder_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_2_shoulder_cvx5" file="cvx/mobile_wx200_2_shoulder_cvx5.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_2_shoulder_cvx6" file="cvx/mobile_wx200_2_shoulder_cvx6.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_2_shoulder_cvx7" file="cvx/mobile_wx200_2_shoulder_cvx7.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_3_upper_arm_cvx0" file="cvx/mobile_wx200_3_upper_arm_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_3_upper_arm_cvx1" file="cvx/mobile_wx200_3_upper_arm_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_3_upper_arm_cvx2" file="cvx/mobile_wx200_3_upper_arm_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_3_upper_arm_cvx3" file="cvx/mobile_wx200_3_upper_arm_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_3_upper_arm_cvx4" file="cvx/mobile_wx200_3_upper_arm_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_3_upper_arm_cvx5" file="cvx/mobile_wx200_3_upper_arm_cvx5.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_3_upper_arm_cvx6" file="cvx/mobile_wx200_3_upper_arm_cvx6.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_4_forearm_cvx0" file="cvx/mobile_wx200_4_forearm_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_4_forearm_cvx1" file="cvx/mobile_wx200_4_forearm_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_4_forearm_cvx2" file="cvx/mobile_wx200_4_forearm_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_4_forearm_cvx3" file="cvx/mobile_wx200_4_forearm_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_4_forearm_cvx4" file="cvx/mobile_wx200_4_forearm_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx0" file="cvx/mobile_wx200_5_wrist_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx1" file="cvx/mobile_wx200_5_wrist_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx2" file="cvx/mobile_wx200_5_wrist_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx3" file="cvx/mobile_wx200_5_wrist_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx4" file="cvx/mobile_wx200_5_wrist_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx5" file="cvx/mobile_wx200_5_wrist_cvx5.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx6" file="cvx/mobile_wx200_5_wrist_cvx6.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx7" file="cvx/mobile_wx200_5_wrist_cvx7.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx8" file="cvx/mobile_wx200_5_wrist_cvx8.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx9" file="cvx/mobile_wx200_5_wrist_cvx9.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx10" file="cvx/mobile_wx200_5_wrist_cvx10.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx11" file="cvx/mobile_wx200_5_wrist_cvx11.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx12" file="cvx/mobile_wx200_5_wrist_cvx12.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx13" file="cvx/mobile_wx200_5_wrist_cvx13.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx14" file="cvx/mobile_wx200_5_wrist_cvx14.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx15" file="cvx/mobile_wx200_5_wrist_cvx15.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx16" file="cvx/mobile_wx200_5_wrist_cvx16.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx17" file="cvx/mobile_wx200_5_wrist_cvx17.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx18" file="cvx/mobile_wx200_5_wrist_cvx18.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx19" file="cvx/mobile_wx200_5_wrist_cvx19.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx20" file="cvx/mobile_wx200_5_wrist_cvx20.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx21" file="cvx/mobile_wx200_5_wrist_cvx21.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx22" file="cvx/mobile_wx200_5_wrist_cvx22.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx23" file="cvx/mobile_wx200_5_wrist_cvx23.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx24" file="cvx/mobile_wx200_5_wrist_cvx24.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_5_wrist_cvx25" file="cvx/mobile_wx200_5_wrist_cvx25.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_6_gripper_cvx0" file="cvx/mobile_wx200_6_gripper_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_6_gripper_cvx1" file="cvx/mobile_wx200_6_gripper_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_6_gripper_cvx2" file="cvx/mobile_wx200_6_gripper_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_6_gripper_cvx3" file="cvx/mobile_wx200_6_gripper_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_6_gripper_cvx4" file="cvx/mobile_wx200_6_gripper_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_7_gripper_prop_cvx0" file="cvx/mobile_wx200_7_gripper_prop_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_7_gripper_prop_cvx1" file="cvx/mobile_wx200_7_gripper_prop_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_7_gripper_prop_cvx2" file="cvx/mobile_wx200_7_gripper_prop_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_7_gripper_prop_cvx3" file="cvx/mobile_wx200_7_gripper_prop_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_7_gripper_prop_cvx4" file="cvx/mobile_wx200_7_gripper_prop_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_8_gripper_bar_cvx0" file="cvx/mobile_wx200_8_gripper_bar_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_8_gripper_bar_cvx1" file="cvx/mobile_wx200_8_gripper_bar_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_8_gripper_bar_cvx2" file="cvx/mobile_wx200_8_gripper_bar_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_8_gripper_bar_cvx3" file="cvx/mobile_wx200_8_gripper_bar_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_8_gripper_bar_cvx4" file="cvx/mobile_wx200_8_gripper_bar_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_8_gripper_bar_cvx5" file="cvx/mobile_wx200_8_gripper_bar_cvx5.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_8_gripper_bar_cvx6" file="cvx/mobile_wx200_8_gripper_bar_cvx6.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_8_gripper_bar_cvx7" file="cvx/mobile_wx200_8_gripper_bar_cvx7.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx0" file="cvx/mobile_wx200_9_gripper_finger_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx1" file="cvx/mobile_wx200_9_gripper_finger_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx2" file="cvx/mobile_wx200_9_gripper_finger_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx3" file="cvx/mobile_wx200_9_gripper_finger_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx4" file="cvx/mobile_wx200_9_gripper_finger_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx5" file="cvx/mobile_wx200_9_gripper_finger_cvx5.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx6" file="cvx/mobile_wx200_9_gripper_finger_cvx6.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx7" file="cvx/mobile_wx200_9_gripper_finger_cvx7.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx8" file="cvx/mobile_wx200_9_gripper_finger_cvx8.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx9" file="cvx/mobile_wx200_9_gripper_finger_cvx9.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx10" file="cvx/mobile_wx200_9_gripper_finger_cvx10.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx11" file="cvx/mobile_wx200_9_gripper_finger_cvx11.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx12" file="cvx/mobile_wx200_9_gripper_finger_cvx12.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx13" file="cvx/mobile_wx200_9_gripper_finger_cvx13.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx14" file="cvx/mobile_wx200_9_gripper_finger_cvx14.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx15" file="cvx/mobile_wx200_9_gripper_finger_cvx15.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx16" file="cvx/mobile_wx200_9_gripper_finger_cvx16.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx17" file="cvx/mobile_wx200_9_gripper_finger_cvx17.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx18" file="cvx/mobile_wx200_9_gripper_finger_cvx18.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx19" file="cvx/mobile_wx200_9_gripper_finger_cvx19.stl" scale="0.001 0.001 0.001" />
+    <mesh name="mobile_wx200_9_gripper_finger_cvx20" file="cvx/mobile_wx200_9_gripper_finger_cvx20.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx0" file="cvx/locobot_arm_cradle_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx1" file="cvx/locobot_arm_cradle_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx2" file="cvx/locobot_arm_cradle_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx3" file="cvx/locobot_arm_cradle_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx4" file="cvx/locobot_arm_cradle_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx5" file="cvx/locobot_arm_cradle_cvx5.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx6" file="cvx/locobot_arm_cradle_cvx6.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx7" file="cvx/locobot_arm_cradle_cvx7.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx8" file="cvx/locobot_arm_cradle_cvx8.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx9" file="cvx/locobot_arm_cradle_cvx9.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx10" file="cvx/locobot_arm_cradle_cvx10.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx11" file="cvx/locobot_arm_cradle_cvx11.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx12" file="cvx/locobot_arm_cradle_cvx12.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_arm_cradle_cvx13" file="cvx/locobot_arm_cradle_cvx13.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_camera_tower_small_simple_cvx0" file="cvx/locobot_camera_tower_small_simple_cvx0.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx1" file="cvx/locobot_camera_tower_small_simple_cvx1.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx2" file="cvx/locobot_camera_tower_small_simple_cvx2.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx3" file="cvx/locobot_camera_tower_small_simple_cvx3.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx4" file="cvx/locobot_camera_tower_small_simple_cvx4.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx5" file="cvx/locobot_camera_tower_small_simple_cvx5.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx6" file="cvx/locobot_camera_tower_small_simple_cvx6.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx7" file="cvx/locobot_camera_tower_small_simple_cvx7.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx8" file="cvx/locobot_camera_tower_small_simple_cvx8.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx9" file="cvx/locobot_camera_tower_small_simple_cvx9.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx10" file="cvx/locobot_camera_tower_small_simple_cvx10.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx11" file="cvx/locobot_camera_tower_small_simple_cvx11.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx12" file="cvx/locobot_camera_tower_small_simple_cvx12.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx13" file="cvx/locobot_camera_tower_small_simple_cvx13.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx14" file="cvx/locobot_camera_tower_small_simple_cvx14.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx15" file="cvx/locobot_camera_tower_small_simple_cvx15.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx16" file="cvx/locobot_camera_tower_small_simple_cvx16.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx17" file="cvx/locobot_camera_tower_small_simple_cvx17.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx18" file="cvx/locobot_camera_tower_small_simple_cvx18.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx19" file="cvx/locobot_camera_tower_small_simple_cvx19.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx20" file="cvx/locobot_camera_tower_small_simple_cvx20.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx21" file="cvx/locobot_camera_tower_small_simple_cvx21.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx22" file="cvx/locobot_camera_tower_small_simple_cvx22.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx23" file="cvx/locobot_camera_tower_small_simple_cvx23.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx24" file="cvx/locobot_camera_tower_small_simple_cvx24.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx25" file="cvx/locobot_camera_tower_small_simple_cvx25.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx26" file="cvx/locobot_camera_tower_small_simple_cvx26.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx27" file="cvx/locobot_camera_tower_small_simple_cvx27.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx28" file="cvx/locobot_camera_tower_small_simple_cvx28.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx29" file="cvx/locobot_camera_tower_small_simple_cvx29.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx30" file="cvx/locobot_camera_tower_small_simple_cvx30.stl" />
+    <mesh name="locobot_camera_tower_small_simple_cvx31" file="cvx/locobot_camera_tower_small_simple_cvx31.stl" />
+    <mesh name="locobot_pan_cvx0" file="cvx/locobot_pan_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx1" file="cvx/locobot_pan_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx2" file="cvx/locobot_pan_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx3" file="cvx/locobot_pan_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx4" file="cvx/locobot_pan_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx5" file="cvx/locobot_pan_cvx5.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx6" file="cvx/locobot_pan_cvx6.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx7" file="cvx/locobot_pan_cvx7.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx8" file="cvx/locobot_pan_cvx8.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx9" file="cvx/locobot_pan_cvx9.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx10" file="cvx/locobot_pan_cvx10.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx11" file="cvx/locobot_pan_cvx11.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx12" file="cvx/locobot_pan_cvx12.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx13" file="cvx/locobot_pan_cvx13.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx14" file="cvx/locobot_pan_cvx14.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx15" file="cvx/locobot_pan_cvx15.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx16" file="cvx/locobot_pan_cvx16.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx17" file="cvx/locobot_pan_cvx17.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx18" file="cvx/locobot_pan_cvx18.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx19" file="cvx/locobot_pan_cvx19.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_pan_cvx20" file="cvx/locobot_pan_cvx20.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_tilt_cvx0" file="cvx/locobot_tilt_cvx0.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_tilt_cvx1" file="cvx/locobot_tilt_cvx1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_tilt_cvx2" file="cvx/locobot_tilt_cvx2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_tilt_cvx3" file="cvx/locobot_tilt_cvx3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_tilt_cvx4" file="cvx/locobot_tilt_cvx4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_tilt_cvx5" file="cvx/locobot_tilt_cvx5.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_tilt_cvx6" file="cvx/locobot_tilt_cvx6.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_tilt_cvx7" file="cvx/locobot_tilt_cvx7.stl" scale="0.001 0.001 0.001" />
+    <mesh name="locobot_tilt_cvx8" file="cvx/locobot_tilt_cvx8.stl" scale="0.001 0.001 0.001" />
+  </asset>
+  <worldbody>
+    <body name="locobot/base_footprint">
+      <body name="locobot/base_link">
+        <inertial pos="0 0 0.0742" quat="0.5 0.5 -0.5 0.5" mass="2.3" diaginertia="0.0309304 0.0161552 0.0161552" />
+        <geom size="0.164 0.03" pos="0 0 0.0392" quat="0.707107 0 0 0.707107" type="cylinder" contype="0" conaffinity="0" group="1" density="0" name="base_link_g0" rgba="0.55 0.55 0.58 1" />
+        <geom name="create3_base_collision" size="0.164 0.03" pos="0 0 0.0492" quat="0.707107 0 0 0.707107" type="cylinder" rgba="0.55 0.55 0.58 1" />
+        <body name="locobot/bump_caster_link" pos="-0.1098 0 0.009648" quat="0 0.707107 0.707107 0">
+          <inertial pos="0 0 0.003407" quat="0.5 0.5 -0.5 0.5" mass="0.0055" diaginertia="6.12e-07 3.69e-07 2.96e-07" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="bump_caster" name="bump_caster_link_g0" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="bump_caster" name="bump_caster_link_g1" />
+        </body>
+        <body name="locobot/bump_front_center" pos="0 0 0.0392">
+          <inertial pos="0.08 0 0.02" quat="0.501828 0.501849 -0.498144 0.498165" mass="0.1" diaginertia="0.00154426 0.00134836 0.000252174" />
+          <geom size="0.171 0.015" type="cylinder" contype="0" conaffinity="0" group="1" density="0" name="bump_front_center_g0" rgba="0.55 0.55 0.58 1" />
+        </body>
+        <body name="locobot/bump_front_left" pos="0.02345 -0.0875 0.025" quat="0.965926 0 0 0.258819" />
+        <body name="locobot/bump_front_right" pos="0.02345 0.0875 0.025" quat="0.965926 0 0 -0.258819" />
+        <body name="locobot/bump_left" pos="0.0875 -0.15155 0.025" quat="0.866027 0 0 0.499998" />
+        <body name="locobot/bump_right" pos="0.0875 0.15155 0.025" quat="0.866027 0 0 -0.499998" />
+        <body name="locobot/wheel_drop_left" pos="0 0.1165 0.0402" quat="0.707107 -0.707107 0 0">
+          <inertial pos="0 0 0" mass="0.05" diaginertia="2.08333e-05 2.08333e-05 2.08333e-05" />
+          <body name="locobot/left_wheel">
+            <inertial pos="0 0 0" quat="0.5 0.5 -0.5 0.5" mass="0.2" diaginertia="0.000127806 6.76531e-05 6.76531e-05" />
+            <joint name="left_wheel_joint" pos="0 0 0" axis="0 0 1" damping="0.01" />
+            <geom size="0.03575 0.0075" type="cylinder" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" name="left_wheel_g0" />
+            <geom size="0.03575 0.0075" type="cylinder" rgba="0.1 0.1 0.1 1" name="left_wheel_g1" />
+          </body>
+        </body>
+        <body name="locobot/wheel_drop_right" pos="0 -0.1165 0.0402" quat="0.707107 -0.707107 0 0">
+          <inertial pos="0 0 0" mass="0.05" diaginertia="2.08333e-05 2.08333e-05 2.08333e-05" />
+          <body name="locobot/right_wheel">
+            <inertial pos="0 0 0" quat="0.5 0.5 -0.5 0.5" mass="0.2" diaginertia="0.000127806 6.76531e-05 6.76531e-05" />
+            <joint name="right_wheel_joint" pos="0 0 0" axis="0 0 1" damping="0.01" />
+            <geom size="0.03575 0.0075" type="cylinder" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" name="right_wheel_g0" />
+            <geom size="0.03575 0.0075" type="cylinder" rgba="0.1 0.1 0.1 1" name="right_wheel_g1" />
+          </body>
+        </body>
+        <body name="locobot/front_caster_link" pos="0.125 0 0.0122" quat="0.707107 -0.707107 0 0">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+          <geom size="0.01" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" name="front_caster_link_g0" />
+          <geom size="0.01" rgba="0.1 0.1 0.1 1" name="front_caster_link_g1" />
+        </body>
+        <body name="locobot/imu_link" pos="0.050613 0.043673 0.0844">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/mouse" pos="0.1015 0.087 0.0092" quat="0.92388 0 0 -0.382683">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/cliff_side_left" pos="0.06 0.145 0.0192" quat="0.0840614 -0.638906 0.0705359 0.761418">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/cliff_side_right" pos="0.06 -0.145 0.0192" quat="0.0840614 0.638906 0.0705359 -0.761418">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/cliff_front_left" pos="0.16 0.045 0.0192" quat="0.644996 -0.346788 0.541216 0.413285">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/cliff_front_right" pos="0.16 -0.045 0.0192" quat="0.644996 0.346788 0.541216 -0.413285">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/ir_intensity_front_center_left" pos="0.154 0 0.0572">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/ir_intensity_front_center_right" pos="0.1396 -0.0651 0.0572" quat="0.976332 0 0 -0.216277">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/ir_intensity_front_left" pos="0.1396 0.0651 0.0572" quat="0.976332 0 0 0.216277">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/ir_intensity_front_right" pos="0.099 -0.118 0.0572" quat="0.906237 0 0 -0.42277">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/ir_intensity_left" pos="0.099 0.118 0.0572" quat="0.906237 0 0 0.42277">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/ir_intensity_right" pos="0.0399 -0.1488 0.0572" quat="0.793352 0 0 -0.608763">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/ir_intensity_side_left" pos="0.0399 0.1488 0.0572" quat="0.793352 0 0 0.608763">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/button_1" pos="0.06 0.037 0.1442" quat="0.707107 0 -0.707107 0" />
+        <body name="locobot/button_2" pos="0.06 -0.037 0.1442" quat="0.707107 0 -0.707107 0" />
+        <body name="locobot/button_power" pos="0.06 0 0.1442" quat="0.707107 0 -0.707107 0" />
+        <body name="locobot/ir_omni" pos="0.153 0 0.0992">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="1.66667e-07 1.66667e-07 1.66667e-07" />
+        </body>
+        <body name="locobot/plate_link" pos="0 0 0.0934">
+          <inertial pos="-0.005869 0 0.00467" quat="0.5 0.5 -0.5 0.5" mass="0.807674" diaginertia="0.00854 0.00527 0.00327" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="locobot_base_plate" name="plate_link_g0" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_base_plate_cvx0" name="plate_link_g1_cvx0" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_base_plate_cvx1" name="plate_link_g1_cvx1" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_base_plate_cvx2" name="plate_link_g1_cvx2" group="3" />
+          <body name="locobot/arm_stand_link" pos="0.092002 0 0.007763">
+            <inertial pos="-0.000603 0 0.0193" quat="0.500385 0.500384 -0.499615 0.499616" mass="0.134" diaginertia="0.000404 0.000287 0.000125" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand" name="arm_stand_link_g0" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx0" name="arm_stand_link_g1_cvx0" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx1" name="arm_stand_link_g1_cvx1" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx2" name="arm_stand_link_g1_cvx2" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx3" name="arm_stand_link_g1_cvx3" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx4" name="arm_stand_link_g1_cvx4" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx5" name="arm_stand_link_g1_cvx5" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx6" name="arm_stand_link_g1_cvx6" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx7" name="arm_stand_link_g1_cvx7" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx8" name="arm_stand_link_g1_cvx8" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx9" name="arm_stand_link_g1_cvx9" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx10" name="arm_stand_link_g1_cvx10" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx11" name="arm_stand_link_g1_cvx11" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx12" name="arm_stand_link_g1_cvx12" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx13" name="arm_stand_link_g1_cvx13" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx14" name="arm_stand_link_g1_cvx14" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx15" name="arm_stand_link_g1_cvx15" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx16" name="arm_stand_link_g1_cvx16" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx17" name="arm_stand_link_g1_cvx17" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx18" name="arm_stand_link_g1_cvx18" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx19" name="arm_stand_link_g1_cvx19" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx20" name="arm_stand_link_g1_cvx20" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx21" name="arm_stand_link_g1_cvx21" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx22" name="arm_stand_link_g1_cvx22" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx23" name="arm_stand_link_g1_cvx23" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_stand_cvx24" name="arm_stand_link_g1_cvx24" group="3" />
+            <body name="locobot/arm_base_link" pos="0 0 0.023">
+              <inertial pos="-0.000135 -2.66286e-05 0.0338755" quat="-0.00382198 0.707161 -0.0088228 0.706987" mass="0.379673" diaginertia="0.000573141 0.00044516 0.000435099" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base" name="arm_base_link_g0" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx0" name="arm_base_link_g1_cvx0" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx1" name="arm_base_link_g1_cvx1" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx2" name="arm_base_link_g1_cvx2" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx3" name="arm_base_link_g1_cvx3" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx4" name="arm_base_link_g1_cvx4" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx5" name="arm_base_link_g1_cvx5" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx6" name="arm_base_link_g1_cvx6" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx7" name="arm_base_link_g1_cvx7" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx8" name="arm_base_link_g1_cvx8" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx9" name="arm_base_link_g1_cvx9" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx10" name="arm_base_link_g1_cvx10" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx11" name="arm_base_link_g1_cvx11" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx12" name="arm_base_link_g1_cvx12" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx13" name="arm_base_link_g1_cvx13" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx14" name="arm_base_link_g1_cvx14" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx15" name="arm_base_link_g1_cvx15" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx16" name="arm_base_link_g1_cvx16" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx17" name="arm_base_link_g1_cvx17" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx18" name="arm_base_link_g1_cvx18" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx19" name="arm_base_link_g1_cvx19" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx20" name="arm_base_link_g1_cvx20" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx21" name="arm_base_link_g1_cvx21" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx22" name="arm_base_link_g1_cvx22" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx23" name="arm_base_link_g1_cvx23" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx24" name="arm_base_link_g1_cvx24" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx25" name="arm_base_link_g1_cvx25" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx26" name="arm_base_link_g1_cvx26" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx27" name="arm_base_link_g1_cvx27" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx28" name="arm_base_link_g1_cvx28" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx29" name="arm_base_link_g1_cvx29" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx30" name="arm_base_link_g1_cvx30" group="3" />
+              <geom pos="-0.095773 0 -0.10565" quat="0.5 0.5 0.5 0.5" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_1_base_cvx31" name="arm_base_link_g1_cvx31" group="3" />
+              <body name="locobot/shoulder_link" pos="0 0 0.066175">
+                <inertial pos="2.2321e-05 4.14608e-05 0.0066287" quat="0.0130373 0.706387 0.0129981 0.707586" mass="0.480879" diaginertia="0.000588946 0.000555655 0.000378999" />
+                <joint name="waist" pos="0 0 0" axis="0 0 1" range="-3.14158 3.14158" actuatorfrcrange="-8 8" frictionloss="0.1" damping="0.1" armature="0.01" />
+                <geom pos="0 0 -0.003" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_2_shoulder" name="shoulder_link_g0" />
+                <geom pos="0 0 -0.003" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_2_shoulder_cvx0" name="shoulder_link_g1_cvx0" group="3" />
+                <geom pos="0 0 -0.003" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_2_shoulder_cvx1" name="shoulder_link_g1_cvx1" group="3" />
+                <geom pos="0 0 -0.003" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_2_shoulder_cvx2" name="shoulder_link_g1_cvx2" group="3" />
+                <geom pos="0 0 -0.003" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_2_shoulder_cvx3" name="shoulder_link_g1_cvx3" group="3" />
+                <geom pos="0 0 -0.003" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_2_shoulder_cvx4" name="shoulder_link_g1_cvx4" group="3" />
+                <geom pos="0 0 -0.003" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_2_shoulder_cvx5" name="shoulder_link_g1_cvx5" group="3" />
+                <geom pos="0 0 -0.003" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_2_shoulder_cvx6" name="shoulder_link_g1_cvx6" group="3" />
+                <geom pos="0 0 -0.003" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_2_shoulder_cvx7" name="shoulder_link_g1_cvx7" group="3" />
+                <body name="locobot/upper_arm_link" pos="0 0 0.03865">
+                  <inertial pos="0.0119707 -0.000117926 0.139429" quat="0.997507 0.0700417 -0.000107481 -0.00858167" mass="0.297781" diaginertia="0.00171002 0.00166111 0.000118068" />
+                  <joint name="shoulder" pos="0 0 0" axis="0 1 0" range="-1.88496 1.97222" actuatorfrcrange="-18 18" frictionloss="0.1" damping="0.5" armature="0.01" />
+                  <geom quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_3_upper_arm" name="upper_arm_link_g0" />
+                  <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_3_upper_arm_cvx0" name="upper_arm_link_g1_cvx0" group="3" />
+                  <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_3_upper_arm_cvx1" name="upper_arm_link_g1_cvx1" group="3" />
+                  <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_3_upper_arm_cvx2" name="upper_arm_link_g1_cvx2" group="3" />
+                  <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_3_upper_arm_cvx3" name="upper_arm_link_g1_cvx3" group="3" />
+                  <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_3_upper_arm_cvx4" name="upper_arm_link_g1_cvx4" group="3" />
+                  <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_3_upper_arm_cvx5" name="upper_arm_link_g1_cvx5" group="3" />
+                  <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_3_upper_arm_cvx6" name="upper_arm_link_g1_cvx6" group="3" />
+                  <body name="locobot/forearm_link" pos="0.05 0 0.2">
+                    <inertial pos="0.121192 -0.000123812 0" quat="0.500544 0.499455 -0.500544 0.499455" mass="0.283651" diaginertia="0.001206 0.00118501 6.82847e-05" />
+                    <joint name="elbow" pos="0 0 0" axis="0 1 0" range="-1.88496 1.62316" actuatorfrcrange="-13 13" frictionloss="0.1" damping="0.3" armature="0.01" />
+                    <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_4_forearm" name="forearm_link_g0" />
+                    <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_4_forearm_cvx0" name="forearm_link_g1_cvx0" group="3" />
+                    <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_4_forearm_cvx1" name="forearm_link_g1_cvx1" group="3" />
+                    <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_4_forearm_cvx2" name="forearm_link_g1_cvx2" group="3" />
+                    <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_4_forearm_cvx3" name="forearm_link_g1_cvx3" group="3" />
+                    <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_4_forearm_cvx4" name="forearm_link_g1_cvx4" group="3" />
+                    <body name="locobot/wrist_link" pos="0.2 0 0">
+                      <inertial pos="0.04236 -1.0663e-05 0.010577" quat="0.608721 0.363497 -0.359175 0.606895" mass="0.084957" diaginertia="3.29057e-05 3.082e-05 2.68343e-05" />
+                      <joint name="wrist_angle" pos="0 0 0" axis="0 1 0" range="-1.74533 2.14675" actuatorfrcrange="-5 5" frictionloss="0.1" damping="0.1" armature="0.01" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist" name="wrist_link_g0" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx0" name="wrist_link_g1_cvx0" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx1" name="wrist_link_g1_cvx1" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx2" name="wrist_link_g1_cvx2" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx3" name="wrist_link_g1_cvx3" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx4" name="wrist_link_g1_cvx4" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx5" name="wrist_link_g1_cvx5" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx6" name="wrist_link_g1_cvx6" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx7" name="wrist_link_g1_cvx7" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx8" name="wrist_link_g1_cvx8" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx9" name="wrist_link_g1_cvx9" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx10" name="wrist_link_g1_cvx10" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx11" name="wrist_link_g1_cvx11" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx12" name="wrist_link_g1_cvx12" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx13" name="wrist_link_g1_cvx13" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx14" name="wrist_link_g1_cvx14" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx15" name="wrist_link_g1_cvx15" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx16" name="wrist_link_g1_cvx16" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx17" name="wrist_link_g1_cvx17" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx18" name="wrist_link_g1_cvx18" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx19" name="wrist_link_g1_cvx19" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx20" name="wrist_link_g1_cvx20" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx21" name="wrist_link_g1_cvx21" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx22" name="wrist_link_g1_cvx22" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx23" name="wrist_link_g1_cvx23" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx24" name="wrist_link_g1_cvx24" group="3" />
+                      <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_5_wrist_cvx25" name="wrist_link_g1_cvx25" group="3" />
+                      <body name="locobot/gripper_link" pos="0.065 0 0">
+                        <inertial pos="0.021631 2.516e-07 0.01141" quat="0.992449 0.12266 0 0" mass="0.072885" diaginertia="2.537e-05 1.84689e-05 1.66311e-05" />
+                        <joint name="wrist_rotate" pos="0 0 0" axis="1 0 0" range="-3.14158 3.14158" actuatorfrcrange="-1 1" frictionloss="0.1" damping="0.05" armature="0.01" />
+                        <geom pos="-0.02 0 0" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_6_gripper" name="gripper_link_g0" />
+                        <geom pos="-0.02 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_6_gripper_cvx0" name="gripper_link_g1_cvx0" group="3" />
+                        <geom pos="-0.02 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_6_gripper_cvx1" name="gripper_link_g1_cvx1" group="3" />
+                        <geom pos="-0.02 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_6_gripper_cvx2" name="gripper_link_g1_cvx2" group="3" />
+                        <geom pos="-0.02 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_6_gripper_cvx3" name="gripper_link_g1_cvx3" group="3" />
+                        <geom pos="-0.02 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_6_gripper_cvx4" name="gripper_link_g1_cvx4" group="3" />
+                        <body name="locobot/ee_arm_link" pos="0.043 0 0">
+                          <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001" />
+                          <body name="locobot/gripper_prop_link" pos="0.0055 0 0">
+                            <inertial pos="0.000846 -1.6817e-06 4.2e-05" quat="0.654786 -0.266277 -0.265707 0.655555" mass="0.00434" diaginertia="1.1156e-06 9.02926e-07 2.63673e-07" />
+                            <joint name="gripper" pos="0 0 0" axis="1 0 0" actuatorfrcrange="-1 1" frictionloss="0.1" damping="0.05" />
+                            <geom pos="-0.0685 0 0" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_7_gripper_prop" name="gripper_prop_link_g0" />
+                            <geom pos="-0.0685 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_7_gripper_prop_cvx0" name="gripper_prop_link_g1_cvx0" group="3" />
+                            <geom pos="-0.0685 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_7_gripper_prop_cvx1" name="gripper_prop_link_g1_cvx1" group="3" />
+                            <geom pos="-0.0685 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_7_gripper_prop_cvx2" name="gripper_prop_link_g1_cvx2" group="3" />
+                            <geom pos="-0.0685 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_7_gripper_prop_cvx3" name="gripper_prop_link_g1_cvx3" group="3" />
+                            <geom pos="-0.0685 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_7_gripper_prop_cvx4" name="gripper_prop_link_g1_cvx4" group="3" />
+                          </body>
+                          <body name="locobot/ar_tag_link" pos="-0.017 0 0.04155">
+                            <inertial pos="0 0 -0.00315" quat="0.5 0.5 -0.5 0.5" mass="0.016507" diaginertia="6.059e-06 3.084e-06 3.084e-06" />
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_10_ar_tag" name="ar_tag_link_g0" />
+                            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_10_ar_tag" name="ar_tag_link_g1" />
+                          </body>
+                          <body name="locobot/gripper_bar_link">
+                            <inertial pos="0.009687 8.177e-07 0.004962" quat="-0.260601 0.657335 -0.260567 0.657345" mass="0.034199" diaginertia="2.99065e-05 2.71235e-05 7.4125e-06" />
+                            <geom pos="-0.063 0 0" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_8_gripper_bar" name="gripper_bar_link_g0" />
+                            <geom pos="-0.063 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_8_gripper_bar_cvx0" name="gripper_bar_link_g1_cvx0" group="3" />
+                            <geom pos="-0.063 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_8_gripper_bar_cvx1" name="gripper_bar_link_g1_cvx1" group="3" />
+                            <geom pos="-0.063 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_8_gripper_bar_cvx2" name="gripper_bar_link_g1_cvx2" group="3" />
+                            <geom pos="-0.063 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_8_gripper_bar_cvx3" name="gripper_bar_link_g1_cvx3" group="3" />
+                            <geom pos="-0.063 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_8_gripper_bar_cvx4" name="gripper_bar_link_g1_cvx4" group="3" />
+                            <geom pos="-0.063 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_8_gripper_bar_cvx5" name="gripper_bar_link_g1_cvx5" group="3" />
+                            <geom pos="-0.063 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_8_gripper_bar_cvx6" name="gripper_bar_link_g1_cvx6" group="3" />
+                            <geom pos="-0.063 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_8_gripper_bar_cvx7" name="gripper_bar_link_g1_cvx7" group="3" />
+                            <body name="locobot/fingers_link" pos="0.023 0 0">
+                              <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001" />
+                              <body name="locobot/left_finger_link">
+                                <inertial pos="0.013816 0 0" quat="0.705384 0.705384 -0.0493271 -0.0493271" mass="0.016246" diaginertia="4.79509e-06 3.7467e-06 1.48651e-06" />
+                                <joint name="left_finger" pos="0 0 0" axis="0 1 0" type="slide" range="0.015 0.037" actuatorfrcrange="-5 5" frictionloss="0.1" damping="5.0" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger" name="left_finger_link_g0" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx0" name="left_finger_link_g1_cvx0" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx1" name="left_finger_link_g1_cvx1" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx2" name="left_finger_link_g1_cvx2" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx3" name="left_finger_link_g1_cvx3" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx4" name="left_finger_link_g1_cvx4" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx5" name="left_finger_link_g1_cvx5" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx6" name="left_finger_link_g1_cvx6" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx7" name="left_finger_link_g1_cvx7" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx8" name="left_finger_link_g1_cvx8" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx9" name="left_finger_link_g1_cvx9" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx10" name="left_finger_link_g1_cvx10" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx11" name="left_finger_link_g1_cvx11" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx12" name="left_finger_link_g1_cvx12" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx13" name="left_finger_link_g1_cvx13" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx14" name="left_finger_link_g1_cvx14" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx15" name="left_finger_link_g1_cvx15" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx16" name="left_finger_link_g1_cvx16" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx17" name="left_finger_link_g1_cvx17" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx18" name="left_finger_link_g1_cvx18" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx19" name="left_finger_link_g1_cvx19" group="3" />
+                                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx20" name="left_finger_link_g1_cvx20" group="3" />
+                              </body>
+                              <body name="locobot/right_finger_link">
+                                <inertial pos="0.013816 0 0" quat="0.705384 0.705384 0.0493271 0.0493271" mass="0.016246" diaginertia="4.79509e-06 3.7467e-06 1.48651e-06" />
+                                <joint name="right_finger" pos="0 0 0" axis="0 1 0" type="slide" range="-0.037 -0.015" actuatorfrcrange="-5 5" frictionloss="0.1" damping="5.0" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger" name="right_finger_link_g0" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx0" name="right_finger_link_g1_cvx0" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx1" name="right_finger_link_g1_cvx1" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx2" name="right_finger_link_g1_cvx2" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx3" name="right_finger_link_g1_cvx3" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx4" name="right_finger_link_g1_cvx4" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx5" name="right_finger_link_g1_cvx5" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx6" name="right_finger_link_g1_cvx6" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx7" name="right_finger_link_g1_cvx7" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx8" name="right_finger_link_g1_cvx8" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx9" name="right_finger_link_g1_cvx9" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx10" name="right_finger_link_g1_cvx10" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx11" name="right_finger_link_g1_cvx11" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx12" name="right_finger_link_g1_cvx12" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx13" name="right_finger_link_g1_cvx13" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx14" name="right_finger_link_g1_cvx14" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx15" name="right_finger_link_g1_cvx15" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx16" name="right_finger_link_g1_cvx16" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx17" name="right_finger_link_g1_cvx17" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx18" name="right_finger_link_g1_cvx18" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx19" name="right_finger_link_g1_cvx19" group="3" />
+                                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="mobile_wx200_9_gripper_finger_cvx20" name="right_finger_link_g1_cvx20" group="3" />
+                              </body>
+                              <body name="locobot/ee_gripper_link" pos="0.027575 0 0">
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001" />
+                                <site name="ee_gripper" pos="0 0 0" size="0.008" rgba="1 0 0 0.6" group="3" />
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+              <site name="arm_base" pos="0 0 0" size="0.008" rgba="0 0 1 0.4" group="3" />
+            </body>
+          </body>
+          <body name="locobot/battery_link" pos="-0.0345 0 0.010763">
+            <inertial pos="0 0 0.016" quat="0.5 0.5 -0.5 0.5" mass="1.194" diaginertia="0.006017 0.004312 0.001908" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="locobot_battery" name="battery_link_g0" />
+            <geom type="mesh" mesh="locobot_battery" name="battery_link_g1" />
+          </body>
+        </body>
+        <body name="locobot/camera_tower_link" pos="-0.048271 0 0.10087">
+          <inertial pos="-0.024689 -0.003432 0.185408" quat="0.997178 -0.013044 -0.0739366 0.000209833" mass="2.43065" diaginertia="0.0571575 0.0478203 0.0177222" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small" name="camera_tower_link_g0" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx0" name="camera_tower_link_g1_cvx0" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx1" name="camera_tower_link_g1_cvx1" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx2" name="camera_tower_link_g1_cvx2" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx3" name="camera_tower_link_g1_cvx3" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx4" name="camera_tower_link_g1_cvx4" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx5" name="camera_tower_link_g1_cvx5" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx6" name="camera_tower_link_g1_cvx6" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx7" name="camera_tower_link_g1_cvx7" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx8" name="camera_tower_link_g1_cvx8" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx9" name="camera_tower_link_g1_cvx9" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx10" name="camera_tower_link_g1_cvx10" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx11" name="camera_tower_link_g1_cvx11" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx12" name="camera_tower_link_g1_cvx12" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx13" name="camera_tower_link_g1_cvx13" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx14" name="camera_tower_link_g1_cvx14" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx15" name="camera_tower_link_g1_cvx15" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx16" name="camera_tower_link_g1_cvx16" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx17" name="camera_tower_link_g1_cvx17" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx18" name="camera_tower_link_g1_cvx18" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx19" name="camera_tower_link_g1_cvx19" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx20" name="camera_tower_link_g1_cvx20" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx21" name="camera_tower_link_g1_cvx21" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx22" name="camera_tower_link_g1_cvx22" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx23" name="camera_tower_link_g1_cvx23" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx24" name="camera_tower_link_g1_cvx24" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx25" name="camera_tower_link_g1_cvx25" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx26" name="camera_tower_link_g1_cvx26" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx27" name="camera_tower_link_g1_cvx27" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx28" name="camera_tower_link_g1_cvx28" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx29" name="camera_tower_link_g1_cvx29" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx30" name="camera_tower_link_g1_cvx30" group="3" />
+          <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_camera_tower_small_simple_cvx31" name="camera_tower_link_g1_cvx31" group="3" />
+          <body name="locobot/arm_cradle_link" pos="0.037943 0 0.139">
+            <inertial pos="0.00143899 0 0.00983874" quat="0.668727 0.668727 -0.22979 0.22979" mass="0.017626" diaginertia="4.71579e-06 4.56151e-06 1.8629e-06" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle" name="arm_cradle_link_g0" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx0" name="arm_cradle_link_g1_cvx0" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx1" name="arm_cradle_link_g1_cvx1" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx2" name="arm_cradle_link_g1_cvx2" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx3" name="arm_cradle_link_g1_cvx3" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx4" name="arm_cradle_link_g1_cvx4" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx5" name="arm_cradle_link_g1_cvx5" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx6" name="arm_cradle_link_g1_cvx6" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx7" name="arm_cradle_link_g1_cvx7" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx8" name="arm_cradle_link_g1_cvx8" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx9" name="arm_cradle_link_g1_cvx9" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx10" name="arm_cradle_link_g1_cvx10" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx11" name="arm_cradle_link_g1_cvx11" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx12" name="arm_cradle_link_g1_cvx12" group="3" />
+            <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_arm_cradle_cvx13" name="arm_cradle_link_g1_cvx13" group="3" />
+          </body>
+          <body name="locobot/pan_link" pos="0.061228 0 0.402">
+            <inertial pos="0.012 0.000496 0.018504" quat="0.650373 0.656177 -0.269404 0.271787" mass="0.098997" diaginertia="2.81445e-05 2.7116e-05 2.04295e-05" />
+            <joint name="pan" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" actuatorfrcrange="-2 2" damping="0.05" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="locobot_pan" name="pan_link_g0" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx0" name="pan_link_g1_cvx0" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx1" name="pan_link_g1_cvx1" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx2" name="pan_link_g1_cvx2" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx3" name="pan_link_g1_cvx3" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx4" name="pan_link_g1_cvx4" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx5" name="pan_link_g1_cvx5" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx6" name="pan_link_g1_cvx6" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx7" name="pan_link_g1_cvx7" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx8" name="pan_link_g1_cvx8" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx9" name="pan_link_g1_cvx9" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx10" name="pan_link_g1_cvx10" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx11" name="pan_link_g1_cvx11" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx12" name="pan_link_g1_cvx12" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx13" name="pan_link_g1_cvx13" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx14" name="pan_link_g1_cvx14" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx15" name="pan_link_g1_cvx15" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx16" name="pan_link_g1_cvx16" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx17" name="pan_link_g1_cvx17" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx18" name="pan_link_g1_cvx18" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx19" name="pan_link_g1_cvx19" group="3" />
+            <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_pan_cvx20" name="pan_link_g1_cvx20" group="3" />
+            <body name="locobot/tilt_link" pos="0.025034 0 0.019">
+              <inertial pos="0.0237737 -1.6331e-06 7.7432e-06" quat="0.0004204 0.707115 0.000420391 0.707099" mass="0.019845" diaginertia="6.6157e-06 6.3634e-06 2.1677e-06" />
+              <joint name="tilt" pos="0 0 0" axis="0 1 0" range="-1.5708 1.309" actuatorfrcrange="-2 2" damping="0.05" />
+              <geom quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="locobot_tilt" name="tilt_link_g0" />
+              <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_tilt_cvx0" name="tilt_link_g1_cvx0" group="3" />
+              <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_tilt_cvx1" name="tilt_link_g1_cvx1" group="3" />
+              <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_tilt_cvx2" name="tilt_link_g1_cvx2" group="3" />
+              <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_tilt_cvx3" name="tilt_link_g1_cvx3" group="3" />
+              <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_tilt_cvx4" name="tilt_link_g1_cvx4" group="3" />
+              <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_tilt_cvx5" name="tilt_link_g1_cvx5" group="3" />
+              <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_tilt_cvx6" name="tilt_link_g1_cvx6" group="3" />
+              <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_tilt_cvx7" name="tilt_link_g1_cvx7" group="3" />
+              <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="locobot_tilt_cvx8" name="tilt_link_g1_cvx8" group="3" />
+              <body name="locobot/camera_link" pos="0.05318 0.0175 9e-06">
+                <inertial pos="-0.008972 -0.015818 3e-06" quat="0.517218 0.520568 -0.478227 0.482487" mass="0.072" diaginertia="4.68619e-05 4.65404e-05 6.91047e-06" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.55 0.55 0.55 1" mesh="locobot_camera" name="camera_link_g0" />
+                <geom type="mesh" rgba="0.55 0.55 0.55 1" mesh="locobot_camera" name="camera_link_g1" />
+                <body name="locobot/camera_depth_link" quat="0.5 -0.5 0.5 -0.5" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <joint name="finger_mimic" joint1="right_finger" joint2="left_finger" polycoef="0 -1 0 0 0" solimp="0.99 0.999 0.001" />
+  </equality>
+  <contact>
+    <exclude body1="locobot/ar_tag_link" body2="locobot/gripper_bar_link" />
+    <exclude body1="locobot/ar_tag_link" body2="locobot/left_finger_link" />
+    <exclude body1="locobot/ar_tag_link" body2="locobot/right_finger_link" />
+    <exclude body1="locobot/arm_base_link" body2="locobot/arm_cradle_link" />
+    <exclude body1="locobot/arm_base_link" body2="locobot/battery_link" />
+    <exclude body1="locobot/arm_base_link" body2="locobot/camera_tower_link" />
+    <exclude body1="locobot/arm_base_link" body2="locobot/pan_link" />
+    <exclude body1="locobot/arm_base_link" body2="locobot/shoulder_link" />
+    <exclude body1="locobot/arm_cradle_link" body2="locobot/pan_link" />
+    <exclude body1="locobot/arm_stand_link" body2="locobot/arm_base_link" />
+    <exclude body1="locobot/arm_stand_link" body2="locobot/arm_cradle_link" />
+    <exclude body1="locobot/arm_stand_link" body2="locobot/battery_link" />
+    <exclude body1="locobot/arm_stand_link" body2="locobot/camera_tower_link" />
+    <exclude body1="locobot/arm_stand_link" body2="locobot/pan_link" />
+    <exclude body1="locobot/arm_stand_link" body2="locobot/shoulder_link" />
+    <exclude body1="locobot/base_link" body2="locobot/arm_base_link" />
+    <exclude body1="locobot/base_link" body2="locobot/arm_cradle_link" />
+    <exclude body1="locobot/base_link" body2="locobot/arm_stand_link" />
+    <exclude body1="locobot/base_link" body2="locobot/battery_link" />
+    <exclude body1="locobot/base_link" body2="locobot/bump_caster_link" />
+    <exclude body1="locobot/base_link" body2="locobot/camera_tower_link" />
+    <exclude body1="locobot/base_link" body2="locobot/front_caster_link" />
+    <exclude body1="locobot/base_link" body2="locobot/left_wheel" />
+    <exclude body1="locobot/base_link" body2="locobot/pan_link" />
+    <exclude body1="locobot/base_link" body2="locobot/plate_link" />
+    <exclude body1="locobot/base_link" body2="locobot/right_wheel" />
+    <exclude body1="locobot/base_link" body2="locobot/shoulder_link" />
+    <exclude body1="locobot/battery_link" body2="locobot/arm_cradle_link" />
+    <exclude body1="locobot/battery_link" body2="locobot/camera_tower_link" />
+    <exclude body1="locobot/battery_link" body2="locobot/pan_link" />
+    <exclude body1="locobot/bump_caster_link" body2="locobot/arm_base_link" />
+    <exclude body1="locobot/bump_caster_link" body2="locobot/arm_cradle_link" />
+    <exclude body1="locobot/bump_caster_link" body2="locobot/arm_stand_link" />
+    <exclude body1="locobot/bump_caster_link" body2="locobot/battery_link" />
+    <exclude body1="locobot/bump_caster_link" body2="locobot/camera_tower_link" />
+    <exclude body1="locobot/bump_caster_link" body2="locobot/front_caster_link" />
+    <exclude body1="locobot/bump_caster_link" body2="locobot/left_wheel" />
+    <exclude body1="locobot/bump_caster_link" body2="locobot/pan_link" />
+    <exclude body1="locobot/bump_caster_link" body2="locobot/plate_link" />
+    <exclude body1="locobot/bump_caster_link" body2="locobot/right_wheel" />
+    <exclude body1="locobot/bump_caster_link" body2="locobot/shoulder_link" />
+    <exclude body1="locobot/camera_tower_link" body2="locobot/arm_cradle_link" />
+    <exclude body1="locobot/camera_tower_link" body2="locobot/pan_link" />
+    <exclude body1="locobot/forearm_link" body2="locobot/wrist_link" />
+    <exclude body1="locobot/front_caster_link" body2="locobot/arm_base_link" />
+    <exclude body1="locobot/front_caster_link" body2="locobot/arm_cradle_link" />
+    <exclude body1="locobot/front_caster_link" body2="locobot/arm_stand_link" />
+    <exclude body1="locobot/front_caster_link" body2="locobot/battery_link" />
+    <exclude body1="locobot/front_caster_link" body2="locobot/camera_tower_link" />
+    <exclude body1="locobot/front_caster_link" body2="locobot/pan_link" />
+    <exclude body1="locobot/front_caster_link" body2="locobot/plate_link" />
+    <exclude body1="locobot/front_caster_link" body2="locobot/shoulder_link" />
+    <exclude body1="locobot/gripper_bar_link" body2="locobot/left_finger_link" />
+    <exclude body1="locobot/gripper_bar_link" body2="locobot/right_finger_link" />
+    <exclude body1="locobot/gripper_link" body2="locobot/ar_tag_link" />
+    <exclude body1="locobot/gripper_link" body2="locobot/gripper_bar_link" />
+    <exclude body1="locobot/gripper_link" body2="locobot/gripper_prop_link" />
+    <exclude body1="locobot/gripper_link" body2="locobot/left_finger_link" />
+    <exclude body1="locobot/gripper_link" body2="locobot/right_finger_link" />
+    <exclude body1="locobot/gripper_prop_link" body2="locobot/ar_tag_link" />
+    <exclude body1="locobot/gripper_prop_link" body2="locobot/gripper_bar_link" />
+    <exclude body1="locobot/left_wheel" body2="locobot/arm_base_link" />
+    <exclude body1="locobot/left_wheel" body2="locobot/arm_cradle_link" />
+    <exclude body1="locobot/left_wheel" body2="locobot/arm_stand_link" />
+    <exclude body1="locobot/left_wheel" body2="locobot/battery_link" />
+    <exclude body1="locobot/left_wheel" body2="locobot/camera_tower_link" />
+    <exclude body1="locobot/left_wheel" body2="locobot/front_caster_link" />
+    <exclude body1="locobot/left_wheel" body2="locobot/plate_link" />
+    <exclude body1="locobot/pan_link" body2="locobot/tilt_link" />
+    <exclude body1="locobot/plate_link" body2="locobot/arm_base_link" />
+    <exclude body1="locobot/plate_link" body2="locobot/arm_cradle_link" />
+    <exclude body1="locobot/plate_link" body2="locobot/arm_stand_link" />
+    <exclude body1="locobot/plate_link" body2="locobot/battery_link" />
+    <exclude body1="locobot/plate_link" body2="locobot/camera_tower_link" />
+    <exclude body1="locobot/plate_link" body2="locobot/pan_link" />
+    <exclude body1="locobot/plate_link" body2="locobot/shoulder_link" />
+    <exclude body1="locobot/right_wheel" body2="locobot/arm_base_link" />
+    <exclude body1="locobot/right_wheel" body2="locobot/arm_cradle_link" />
+    <exclude body1="locobot/right_wheel" body2="locobot/arm_stand_link" />
+    <exclude body1="locobot/right_wheel" body2="locobot/battery_link" />
+    <exclude body1="locobot/right_wheel" body2="locobot/camera_tower_link" />
+    <exclude body1="locobot/right_wheel" body2="locobot/front_caster_link" />
+    <exclude body1="locobot/right_wheel" body2="locobot/plate_link" />
+    <exclude body1="locobot/shoulder_link" body2="locobot/arm_cradle_link" />
+    <exclude body1="locobot/shoulder_link" body2="locobot/battery_link" />
+    <exclude body1="locobot/shoulder_link" body2="locobot/camera_tower_link" />
+    <exclude body1="locobot/shoulder_link" body2="locobot/upper_arm_link" />
+    <exclude body1="locobot/tilt_link" body2="locobot/camera_link" />
+    <exclude body1="locobot/upper_arm_link" body2="locobot/forearm_link" />
+    <exclude body1="locobot/wrist_link" body2="locobot/gripper_link" />
+    <exclude body1="world" body2="locobot/arm_base_link" />
+    <exclude body1="world" body2="locobot/arm_cradle_link" />
+    <exclude body1="world" body2="locobot/arm_stand_link" />
+    <exclude body1="world" body2="locobot/base_link" />
+    <exclude body1="world" body2="locobot/battery_link" />
+    <exclude body1="world" body2="locobot/bump_caster_link" />
+    <exclude body1="world" body2="locobot/camera_tower_link" />
+    <exclude body1="world" body2="locobot/front_caster_link" />
+    <exclude body1="world" body2="locobot/left_wheel" />
+    <exclude body1="world" body2="locobot/pan_link" />
+    <exclude body1="world" body2="locobot/plate_link" />
+    <exclude body1="world" body2="locobot/right_wheel" />
+    <exclude body1="world" body2="locobot/shoulder_link" />
+  </contact>
+  <keyframe>
+    <key name="home" qpos="0 0 0 0 0 0 0 0 0.021 -0.021 0 0" />
+    <key name="sleep" qpos="0 0 0 -1.3 1.55 0.7 0 0 0.021 -0.021 0 0" />
+  </keyframe>
+</mujoco>

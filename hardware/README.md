@@ -87,3 +87,8 @@ mode. If you want the arm limp, `rosservice call /locobot/torque_enable
 - Switching operating mode torques the motors off and back on, so expect a small
   sag at the switch. Start from the sleep/rest pose, where gravity torque is
   lowest.
+
+
+python3 reach_and_log_hw.py 0.45 0.20 0.30 --go --csv reach2.csv
+
+python3 go_to_sleep.py --go --via-home

@@ -43,6 +43,7 @@ from interbotix_xs_msgs.msg import JointGroupCommand
 from interbotix_xs_msgs.srv import OperatingModes, OperatingModesRequest
 from interbotix_xs_msgs.srv import RobotInfo, RobotInfoRequest
 from sensor_msgs.msg import JointState
+from ros_check import require_master
 
 ROBOT = "locobot"
 GROUP = "arm"
@@ -276,6 +277,7 @@ def main():
     if args.time > args.max_duration:
         sys.exit(f"-t {args.time} exceeds --max-duration {args.max_duration}")
 
+    require_master()
     rospy.init_node("uan_arm_velocity_hw", anonymous=True)
     arm = HardwareArm(rate_hz=args.rate, max_speed=args.max_speed,
                       dry_run=args.dry_run)

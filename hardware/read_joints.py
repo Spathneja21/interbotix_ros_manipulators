@@ -17,6 +17,7 @@ import time
 import rospy
 from interbotix_xs_msgs.srv import RobotInfo, RobotInfoRequest
 from sensor_msgs.msg import JointState
+from ros_check import require_master
 
 NS = "/locobot"
 GROUP = "arm"
@@ -38,6 +39,7 @@ def main():
     ap.add_argument("--watch", action="store_true", help="keep updating")
     args = ap.parse_args()
 
+    require_master()
     rospy.init_node("uan_read_joints", anonymous=True, disable_signals=True)
 
     rospy.wait_for_service(f"{NS}/get_robot_info", timeout=10)
