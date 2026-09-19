@@ -1,0 +1,81 @@
+<mujoco model="wx200">
+  <compiler angle="radian" meshdir="meshes/" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" />
+  <asset>
+    <mesh name="wx200_1_base" file="wx200_1_base.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wx200_2_shoulder" file="wx200_2_shoulder.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wx200_3_upper_arm" file="wx200_3_upper_arm.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wx200_4_forearm" file="wx200_4_forearm.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wx200_5_wrist" file="wx200_5_wrist.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wx200_6_gripper" file="wx200_6_gripper.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wx200_7_gripper_prop" file="wx200_7_gripper_prop.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wx200_8_gripper_bar" file="wx200_8_gripper_bar.stl" scale="0.001 0.001 0.001" />
+    <mesh name="wx200_9_gripper_finger" file="wx200_9_gripper_finger.stl" scale="0.001 0.001 0.001" />
+  </asset>
+  <worldbody>
+    <geom quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="wx200_1_base" name="base_link_g0" />
+    <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="wx200_1_base" name="base_link_g1" />
+    <body name="wx200/shoulder_link" pos="0 0 0.072">
+      <inertial pos="2.2321e-05 4.14608e-05 0.0066287" quat="0.0130373 0.706387 0.0129981 0.707586" mass="0.480879" diaginertia="0.000588946 0.000555655 0.000378999" />
+      <joint name="waist" pos="0 0 0" axis="0 0 1" range="-3.14158 3.14158" actuatorfrcrange="-8 8" frictionloss="0.1" damping="0.1" armature="0.01" />
+      <geom pos="0 0 -0.003" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="wx200_2_shoulder" name="shoulder_link_g0" />
+      <geom pos="0 0 -0.003" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="wx200_2_shoulder" name="shoulder_link_g1" />
+      <body name="wx200/upper_arm_link" pos="0 0 0.03865">
+        <inertial pos="0.0119707 -0.000117926 0.139429" quat="0.997507 0.0700417 -0.000107481 -0.00858167" mass="0.297781" diaginertia="0.00171002 0.00166111 0.000118068" />
+        <joint name="shoulder" pos="0 0 0" axis="0 1 0" range="-1.88496 1.97222" actuatorfrcrange="-18 18" frictionloss="0.1" damping="0.5" armature="0.01" />
+        <geom quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="wx200_3_upper_arm" name="upper_arm_link_g0" />
+        <geom quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="wx200_3_upper_arm" name="upper_arm_link_g1" />
+        <body name="wx200/forearm_link" pos="0.05 0 0.2">
+          <inertial pos="0.121192 -0.000123812 0" quat="0.500544 0.499455 -0.500544 0.499455" mass="0.283651" diaginertia="0.001206 0.00118501 6.82847e-05" />
+          <joint name="elbow" pos="0 0 0" axis="0 1 0" range="-1.88496 1.62316" actuatorfrcrange="-13 13" frictionloss="0.1" damping="0.3" armature="0.01" />
+          <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="wx200_4_forearm" name="forearm_link_g0" />
+          <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="wx200_4_forearm" name="forearm_link_g1" />
+          <body name="wx200/wrist_link" pos="0.2 0 0">
+            <inertial pos="0.04236 -1.0663e-05 0.010577" quat="0.608721 0.363497 -0.359175 0.606895" mass="0.084957" diaginertia="3.29057e-05 3.082e-05 2.68343e-05" />
+            <joint name="wrist_angle" pos="0 0 0" axis="0 1 0" range="-1.74533 2.14675" actuatorfrcrange="-5 5" frictionloss="0.1" damping="0.1" armature="0.01" />
+            <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="wx200_5_wrist" name="wrist_link_g0" />
+            <geom pos="0 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="wx200_5_wrist" name="wrist_link_g1" />
+            <body name="wx200/gripper_link" pos="0.065 0 0">
+              <inertial pos="0.0325296 4.2061e-07 0.0090959" quat="0.546081 0.419626 0.62801 0.362371" mass="0.110084" diaginertia="0.00307592 0.00307326 0.0030332" />
+              <joint name="wrist_rotate" pos="0 0 0" axis="1 0 0" range="-3.14158 3.14158" actuatorfrcrange="-1 1" frictionloss="0.1" damping="0.05" armature="0.01" />
+              <geom pos="-0.02 0 0" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="wx200_6_gripper" name="gripper_link_g0" />
+              <geom pos="-0.02 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="wx200_6_gripper" name="gripper_link_g1" />
+              <geom pos="-0.02 0 0" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="wx200_8_gripper_bar" name="gripper_link_g2" />
+              <geom pos="-0.02 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="wx200_8_gripper_bar" name="gripper_link_g3" />
+              <body name="wx200/gripper_prop_link" pos="0.0485 0 0">
+                <inertial pos="0.000846 -1.6817e-06 4.2e-05" quat="0.654786 -0.266277 -0.265707 0.655555" mass="0.00434" diaginertia="1.1156e-06 9.02926e-07 2.63673e-07" />
+                <joint name="gripper" pos="0 0 0" axis="1 0 0" actuatorfrcrange="-1 1" frictionloss="0.1" damping="0.05" />
+                <geom pos="-0.0685 0 0" quat="0.707107 0 0 0.707107" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="wx200_7_gripper_prop" name="gripper_prop_link_g0" />
+                <geom pos="-0.0685 0 0" quat="0.707107 0 0 0.707107" type="mesh" rgba="0.15 0.15 0.15 1" mesh="wx200_7_gripper_prop" name="gripper_prop_link_g1" />
+              </body>
+              <body name="wx200/left_finger_link" pos="0.066 0 0">
+                <inertial pos="0.013816 0 0" quat="0.705384 0.705384 -0.0493271 -0.0493271" mass="0.016246" diaginertia="4.79509e-06 3.7467e-06 1.48651e-06" />
+                <joint name="left_finger" pos="0 0 0" axis="0 1 0" type="slide" range="0.015 0.037" actuatorfrcrange="-5 5" frictionloss="0.1" damping="5.0" />
+                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="wx200_9_gripper_finger" name="left_finger_link_g0" />
+                <geom pos="0 0.005 0" quat="0 0 0 -1" type="mesh" rgba="0.15 0.15 0.15 1" mesh="wx200_9_gripper_finger" name="left_finger_link_g1" />
+              </body>
+              <body name="wx200/right_finger_link" pos="0.066 0 0">
+                <inertial pos="0.013816 0 0" quat="0.705384 0.705384 0.0493271 0.0493271" mass="0.016246" diaginertia="4.79509e-06 3.7467e-06 1.48651e-06" />
+                <joint name="right_finger" pos="0 0 0" axis="0 1 0" type="slide" range="-0.037 -0.015" actuatorfrcrange="-5 5" frictionloss="0.1" damping="5.0" />
+                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15 0.15 0.15 1" mesh="wx200_9_gripper_finger" name="right_finger_link_g0" />
+                <geom pos="0 -0.005 0" quat="0 0 1 0" type="mesh" rgba="0.15 0.15 0.15 1" mesh="wx200_9_gripper_finger" name="right_finger_link_g1" />
+              </body>
+              <site name="ee_gripper" pos="0.093575 0 0" size="0.008" rgba="1 0 0 0.6" group="3" />
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <site name="base_link" pos="0 0 0" size="0.01" rgba="0 0 1 0.4" group="3" />
+  </worldbody>
+  <equality>
+    <joint name="finger_mimic" joint1="right_finger" joint2="left_finger" polycoef="0 -1 0 0 0" solimp="0.99 0.999 0.001" />
+  </equality>
+  <contact>
+    <exclude name="base_shoulder" body1="world" body2="wx200/shoulder_link" />
+  </contact>
+  <keyframe>
+    <key name="home" qpos="0 0 0 0 0 0 0.021 -0.021" />
+    <key name="sleep" qpos="0.0 -1.88 1.5 0.8 0.0 0 0.021 -0.021" />
+  </keyframe>
+</mujoco>

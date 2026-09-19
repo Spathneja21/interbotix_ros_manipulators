@@ -1,0 +1,4 @@
+<mujoco model="locobot_scene_velocity">
+  <include file="scene.xml"/>
+  <include file="actuators_velocity.xml"/>
+</mujoco>

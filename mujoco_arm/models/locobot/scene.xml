@@ -1,0 +1,24 @@
+<mujoco model="locobot_scene">
+  <!-- The whole LoCoBot on a floor. Regenerate locobot_wx200.xml with
+       convert/locobot_to_mjcf.py; this file is hand-maintained. -->
+  <include file="locobot_wx200.xml"/>
+
+  <statistic center="0.15 0 0.3" extent="1.0"/>
+  <visual>
+    <headlight diffuse="0.5 0.5 0.5" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <global azimuth="150" elevation="-20" offwidth="1280" offheight="960"/>
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4"
+             rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.1"/>
+  </asset>
+  <worldbody>
+    <light pos="0 0 2" dir="0 0 -1" directional="true"/>
+    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+    <camera name="track" pos="1.1 -1.0 0.8" xyaxes="0.67 0.74 0 -0.33 0.3 0.9"/>
+    <camera name="side" pos="0.2 -1.3 0.45" xyaxes="1 0 0 0 0.25 0.97"/>
+    <camera name="front" pos="1.4 0 0.5" xyaxes="0 1 0 -0.25 0 0.97"/>
+  </worldbody>
+</mujoco>

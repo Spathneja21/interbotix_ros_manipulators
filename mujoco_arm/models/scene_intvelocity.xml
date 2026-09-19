@@ -1,0 +1,6 @@
+<mujoco model="wx200_scene_intvelocity">
+  <!-- The WX200 scene plus intvelocity actuators on the 5 arm joints.
+       Both files are generated; see ../README.md and ../plan.md phase 2. -->
+  <include file="scene.xml"/>
+  <include file="actuators_intvelocity.xml"/>
+</mujoco>
