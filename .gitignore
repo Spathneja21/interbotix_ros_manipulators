@@ -8,3 +8,6 @@ PLAN.md
 cmds.md
 test/
 plan.md
+
+# generated test/experiment output (CSVs, plots, screenshots) - local only
+test_output/
