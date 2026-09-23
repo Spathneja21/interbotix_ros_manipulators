@@ -89,6 +89,9 @@ mode. If you want the arm limp, `rosservice call /locobot/torque_enable
   lowest.
 
 
+cd /home/locobot/UAN/interbotix_ros_manipulators/mujoco_arm
+python3 live_mirror.py
+
 python3 reach_and_log_hw.py 0.45 0.20 0.30 --go --csv reach2.csv
 
-python3 go_to_sleep.py --go --via-home
+python3 go_to_sleep.py --go --via-home 
