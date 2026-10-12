@@ -95,3 +95,15 @@ python3 live_mirror.py
 python3 reach_and_log_hw.py 0.45 0.20 0.30 --go --csv reach2.csv
 
 python3 go_to_sleep.py --go --via-home 
+
+
+source /opt/ros/noetic/setup.bash
+export ROS_MASTER_URI=http://172.22.149.85:11311
+export ROS_IP=<laptop's own WiFi IP>          # find with hostname -I on the laptop
+
+git clone https://github.com/Spathneja21/interbotix_ros_manipulators.git
+cd interbotix_ros_manipulators/mujoco_arm
+pip install mujoco numpy
+
+rostopic list        # sanity check, same as the README's rviz step
+python3 live_mirror.py
